@@ -1,0 +1,15 @@
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+
+        x = {}
+
+        for i in s:
+            if i in x.keys():
+                continue
+            else:
+                x[i] = s.count(i)
+        j = max(x.values())
+        while len(s) - j > k:
+            s = s[1:]
+        return len(s) 
+        
